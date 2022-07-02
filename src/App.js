@@ -12,7 +12,6 @@ function App() {
 				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
 					Learn React
 				</a>
-				<h1>nois na fita</h1>
 			</header>
 		</div>
 	);
