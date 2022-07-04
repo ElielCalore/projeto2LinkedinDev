@@ -34,6 +34,11 @@ export function AdPage() {
   return (
     <div>
       <div>
+        <Link to={"/create"}>
+          <button className="btn btn-primary">Anunciar Vaga!</button>
+        </Link>
+      </div>
+      <div>
         {data.map((current) => {
           console.log(current);
           return (
