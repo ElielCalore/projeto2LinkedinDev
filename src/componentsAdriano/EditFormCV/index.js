@@ -1,14 +1,17 @@
-import styles from "./styles.module.css"
+import {useState, useEffect} from "react"
+import {useParams, useNavigate} from "react-router-dom"
 import axios from "axios"
-import {useState} from "react"
-import {useNavigate} from "react-router-dom"
+import styles from "./styles.module.css"
 
-export function FormCV () {
+
+export function EditFormCV () {
 
     const navigate = useNavigate()
 
+    const {idCV} = useParams()
 
-    const [form, setForm] = useState({
+    const [ form, setForm] = useState({        
+            
         name: "",
         about: "",
         other: "",
@@ -22,11 +25,24 @@ export function FormCV () {
         github: false,
         humor: false,
 
-        vagas: []
+        vagas: []})
 
-        // image: {}
 
-    })
+
+    useEffect(() => {
+        async function FetchCV() {
+            try { 
+            const response = await axios.get(`https://ironrest.herokuapp.com/linkedinadriano/${idCV}`)
+            setForm(response.data)
+
+            } catch (err) {
+                console.log(err)
+            }
+        } 
+        FetchCV()
+
+    }, [])
+
 
     function handleChange(e) {
         setForm({...form, [e.target.name]: e.target.value})
@@ -38,32 +54,14 @@ export function FormCV () {
         setForm({...form, [e.target.name]: true}) : setForm({...form, [e.target.name]: false})     
     }
 
-
-
     async function handleSubmit(e) {
         e.preventDefault();
-        try{ await axios.post("https://ironrest.herokuapp.com/linkedinadriano", form)
 
-            setForm({        
-            
-                name: "",
-                about: "",
-                other: "",
+        const clone = form
 
-                debug: false,
-                css: false,
-                bootstrap: false,
-                form: false,
-                delete: false,
-                mongo: false,
-                github: false,
-                humor: false,
-
-                vagas: []});
-
-            navigate("/dashboard")
-
-            
+        try{  delete clone._id
+              await axios.put(`https://ironrest.herokuapp.com/linkedinadriano/${idCV}`, clone)
+              navigate("/dashboard")
 
         } catch(error) {
             console.log(error)
@@ -71,15 +69,10 @@ export function FormCV () {
     }
     
 
+    return (
 
-        // function handleImage(e) {
-    //     setForm({...form, image: e.target.files[0]})
-    //     console.log("upload image")
-    // }
 
-    return(
-
-    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5" id={styles.formContainer}>    
+        <div className="col-md-8 col-sm-12 col-lg-8 container mt-5" id={styles.formContainer}>    
         <form>
 
             {/* <div className="mb-4">
@@ -90,21 +83,21 @@ export function FormCV () {
             </div> */}
 
             <div className="mb-4">
-                <div className="mb-4"><h2>Informações Pessoais</h2></div>
+                <div className="mb-4"><h2>Edite Informações Pessoais</h2></div>
                 <label htmlFor="name-input" className="form-label"><h5>Nome completo: </h5></label>
-                <input id={styles.nameInput} onChange={handleChange} type="text" name="name"  className="form-control mb-4" value={form.nome}/>
+                <input id={styles.nameInput} onChange={handleChange} type="text" name="name"  className="form-control mb-4" value={form.name}/>
 
                 <label htmlFor="about-input" className="form-label"><h5>Sobre mim: </h5></label>
-                <textarea id="about-input" onChange={handleChange} type="text" name="about" className="form-control mb-4" value={form.sobre}/>
+                <textarea id="about-input" onChange={handleChange} type="text" name="about" className="form-control mb-4" value={form.about}/>
             </div>
 
-            <div className="mb-4"><h2>Habilidades</h2></div>
+            <div className="mb-4"><h2>Edite Habilidades</h2></div>
 
 
             <div className="form-check mb-4">
                 <div>
                     <label htmlFor="debug-input" className="form-check-label">bom em debugar</label> 
-                    <input type="checkbox" onChange={handleCheckbox} name="debug" className="form-check-input" id="debug-input" value={form.debug}/>
+                    <input type="checkbox" onChange={handleCheckbox} name="debug" className="form-check-input" id="debug-input" value={form.debug} />
                 </div>
 
                 <div>
@@ -155,5 +148,5 @@ export function FormCV () {
         </form>
     </div>
     )
-
+    
 }

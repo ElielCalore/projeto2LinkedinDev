@@ -8,9 +8,10 @@ h2 {
 
 #formContainer {
     background-color: #fff;
-    border-radius: 20px;
-    padding: 50px;
+    padding: 100px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+        /* border-radius: 20px; */
+
 }
 
 #nameInput,
@@ -20,12 +21,20 @@ h2 {
     border-radius: 0
 }
 
-.button {
+/* .button {
     background-color: palevioletred !important;
     border-color: palevioletred !important;
-}
+} */
 
 .button:hover {
-    background-color: rgb(243, 11, 88) !important;
-    border-color: rgb(243, 11, 88) !important;
+    background-color: #3d36bd !important;
+    border-color:#3d36bd !important;
+    transition: .5s
+}
+
+.button {
+    background-color: #6c63ff !important;
+    border-color:#6c63ff !important;
+    border-radius: 10px !important;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2) !important;
 }
