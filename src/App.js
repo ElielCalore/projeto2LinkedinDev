@@ -1,22 +1,34 @@
-//import { FormCV } from "./componentsAdriano/FormCV";
-import { Create } from "./componentsEliel/pages/Create/Create";
+import { FormCV } from "./componentsAdriano/FormCV";
+import {Home} from "./componentsAdriano/Home"
+import {EditFormCV} from "./componentsAdriano/EditFormCV"
+import {Dashboard} from "./componentsAdriano/Dashboard"
 import { AdPage } from "./componentsEliel/pages/AdPage/AdPage";
 import { Edit } from "./componentsEliel/pages/Edit/Edit";
-import { Routes, Route } from "react-router-dom";
+import { Create } from "./componentsEliel/pages/Create/Create";
+
+import {Routes, Route, Link} from "react-router-dom"
 
 function App() {
-  return (
-    <div>
-      <div>{/*<FormCV />*/}</div>
-      <div>
-        <Routes>
-          <Route path={"/"} element={<Create />} />
-          <Route path={"/ad-page"} element={<AdPage />} />
-          <Route path={"/edit/:id"} element={<Edit />} />
-        </Routes>
-      </div>
-    </div>
-  );
+	return (
+		<div className="App">
+
+			<Home />
+
+
+
+    <Routes>
+      {/* <Route path="/:idCV" element={<EditFormCV />}/> */}
+      <Route path="/dashboard" element={<Dashboard />}/>
+      <Route path="/FormCV" element={<FormCV />} />
+      <Route path="/EditFormCV/:idCV" element={<EditFormCV />} />
+      <Route path={"/"} element={<Create />} />
+      <Route path={"/ad-page"} element={<AdPage />} />
+      <Route path={"/edit/:id"} element={<Edit />} />
+    </Routes>
+
+		</div>
+	);
+
 }
 
 export default App;
