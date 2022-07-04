@@ -67,13 +67,13 @@ export function Dashboard () {
 
             <div className="row">
                 
-                <div className="col-3 d-flex justify-content-center"><Link to="/formCV" className={`btn btn-primary ${styles.button}`} >CRIE PERFIL</Link></div>
+                <div className="col-3"><Link to="/formCV" className={`btn btn-primary ${styles.button}`} >CRIE PERFIL</Link></div>
                 <div className="col-3"></div>
                 <div className="col-3"></div>
 
                 {form.map((current) => {
                     
-                        return  <div className={`container col-4 gx-5 ${styles.formCard}`} key={current._id}>
+                        return  <div className={`container col-sm-5 col-md-3 m-2 ${styles.formCard}`} key={current._id}>
                                         <div className="row">
 
 
@@ -86,16 +86,16 @@ export function Dashboard () {
                                                 </div>
 
                                                 <div>
-                                                <div className="col-3 d-flex justify-content-center"><Link to={`/EditFormCV/${current._id}`}className={`btn btn-primary ${styles.button}`} >EDITAR</Link></div>
+                                                <div className="col-3 d-flex "><Link to={`/EditFormCV/${current._id}`}className={`btn btn-primary ${styles.button}`} >EDITAR</Link></div>
                                                 </div>
 
                                                 <div>
-                                                <div className="col-3 d-flex justify-content-center"><Link to="/formCV" className={`btn btn-primary ${styles.button}`} >VAGAS</Link></div>
+                                                <div className="col-3 d-flex "><Link to="/formCV" className={`btn btn-primary ${styles.button}`} >VAGAS</Link></div>
                                                 </div>
 
                                                 
                                                 <div>
-                                                <div className="col-3 d-flex justify-content-center"><button onClick={(() => {
+                                                <div className="col-3 d-flex "><button onClick={(() => {
                                                     handleDelete(current)
                                                 })} to="/formCV" className={`btn btn-primary ${styles.buttonDel}`} >DELETE</button></div>
                                                 </div>
