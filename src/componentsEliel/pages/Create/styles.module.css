@@ -1,0 +1,32 @@
+body {
+    background-color: #f8f8f8 !important;
+}
+
+h2 {
+    font-weight: 700 !important;
+}
+
+#formContainer {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0.5px 10px 15px rgba(0, 0, 0, 0.2);
+    margin: 25px;
+}
+
+#nameInput,
+#otherInput {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+
+.button {
+    background-color: palevioletred !important;
+    border-color: palevioletred !important;
+}
+
+.button:hover {
+    background-color: rgb(243, 11, 88) !important;
+    border-color: rgb(243, 11, 88) !important;
+}
