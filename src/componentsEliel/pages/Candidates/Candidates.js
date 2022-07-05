@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./styles.module.css"
-
+import styles from "./styles.module.css";
 
 export function Candidates() {
   const [data, setData] = useState([]);
@@ -22,11 +21,16 @@ export function Candidates() {
     AllCandidates();
   }, []);
   return (
-    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5" id={styles.formContainer}>
-      <div className="mb-5"><h3>Lista de Candidatos</h3></div>
+    <div
+      className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5"
+      id={styles.formContainer}
+    >
+      <div className="mb-5">
+        <h3>Lista de Candidatos</h3>
+      </div>
       {data.map((currentElement) => {
         return (
-          <div className="mb-4">
+          <div className="mb-4" key={Math.random()}>
             <h5>Nome: {currentElement.name}</h5>
             <p>{currentElement.about} </p>
             <p>{currentElement.other}</p>
