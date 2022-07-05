@@ -109,12 +109,14 @@ export function Edit() {
             Salvar
           </button>
 
-          <button onClick={handleDelete} className="btn btn-danger m-3">
-            Deletar
-          </button>
-          <Link to="/ad-page" className="btn btn-warning">
+          <Link to="/ad-page" className={`btn btn-primary m-3 ${styles.button}`}>
             Voltar
           </Link>
+
+          <button onClick={handleDelete} className="btn btn-danger">
+            Deletar
+          </button>
+
         </div>
       </form>
     </div>
