@@ -7,7 +7,7 @@ import { Edit } from "./componentsEliel/pages/Edit/Edit";
 import { Create } from "./componentsEliel/pages/Create/Create";
 import { Jobs } from "./componentsAdriano/Jobs";
 import { Candidates } from "./componentsEliel/pages/Candidates/Candidates";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
