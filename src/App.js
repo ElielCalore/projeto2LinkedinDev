@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Home />
-      <p>teste</p>
+
       <Routes>
         <Route path="/Jobs/:idCV" element={<Jobs />} />
         <Route path="/dashboard" element={<Dashboard />} />
