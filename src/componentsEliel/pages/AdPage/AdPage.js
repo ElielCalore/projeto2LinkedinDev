@@ -47,32 +47,34 @@ export function AdPage() {
 
         {data.map((current) => {
           return (
-<>
-            <div className={`container mb-5 ${styles.formCardJobs}`} key={current.name}>
-            <div className="row mb-3 p-4 align-items-center">
-                <div className="col-3"><strong>{current.name}</strong></div>
+            <div
+              className={`container mb-5 ${styles.formCardJobs}`}
+              key={current.name}
+            >
+              <div className="row mb-3 p-4 align-items-center">
+                <div className="col-3">
+                  <strong>{current.name}</strong>
+                </div>
                 <div className="col-7">{current.office}</div>
-                <div className="col-1"><Link to={`/edit/${current._id}`} className={`btn btn-primary ${styles.button}`}>
-                  Edit 
-                </Link></div>
+                <div className="col-1">
+                  <Link
+                    to={`/edit/${current._id}`}
+                    className={`btn btn-primary ${styles.button}`}
+                  >
+                    Edit
+                  </Link>
+                </div>
                 <div className="col-10 ">{current.description}</div>
-                <div className="col-1"><Link to={`/candidates/${current._id}`} className={`btn btn-primary ${styles.button}`}>
-                  Details
-                </Link></div>
-
-
-
+                <div className="col-1">
+                  <Link
+                    to={`/candidates/${current._id}`}
+                    className={`btn btn-primary ${styles.button}`}
+                  >
+                    Details
+                  </Link>
+                </div>
+              </div>
             </div>
-
-        </div>
-
-
-
-
-
-
-            </>
-
           );
         })}
       </div>
