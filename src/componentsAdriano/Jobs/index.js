@@ -13,10 +13,28 @@ export function Jobs () {
         { name: "", office: "", description: "", candidacies: [] },
       ])
 
+      const [user, setUser] = useState({        
+            
+        name: "",
+        about: "",
+        other: "",
+
+        debug: false,
+        css: false,
+        bootstrap: false,
+        form: false,
+        delete: false,
+        mongo: false,
+        github: false,
+        humor: false,
+
+        vagas: []}        
+      )
+
     useEffect(() => {
         async function fetchJobs() {
             try {
-                const response = await axios.get("https://ironrest.herokuapp.com/likedineliel")
+                const response = await axios.get("https://ironrest.herokuapp.com/linkedineliel")
                 setForm(response.data)
             } catch (err) {
                 console.log(err)
@@ -25,7 +43,38 @@ export function Jobs () {
         fetchJobs()
     },[])  
 
-    console.log(form)
+
+    useEffect(() => {
+        async function fetchUser() {
+            try {
+                const response = await axios.get(`https://ironrest.herokuapp.com/linkedinadriano/${idCV}`)
+                setUser(response.data)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        fetchUser()
+    },[])  
+
+
+
+   async function likeButton(currentJob) {
+
+        const jobId = currentJob._id
+
+        const clone = currentJob
+
+        delete clone._id
+
+        clone.candidacies = [...clone.candidacies, user]
+
+        console.log(clone)
+
+
+        await axios.put(`https://ironrest.herokuapp.com/linkedineliel/${jobId}`, clone)
+
+   }
+
 
 
     return (
@@ -42,7 +91,9 @@ export function Jobs () {
                     <div className="row mb-3 p-4 align-items-center">
                         <div className="col-3"><strong>{current.name}</strong></div>
                         <div className="col-8">{current.office}</div>
-                        <div className="col-1"><button className={`btn btn-primary ${styles.buttonDel}`}>{'\u2665'}</button></div>
+                        <div className="col-1"><button onClick={() => {
+            likeButton(current)
+        }}  className={`btn btn-primary ${styles.buttonDel}`}>{'\u2665'}</button></div>
     
                         <div className="col-1"></div>
                         <div className="col-10 ">{current.description}</div>
