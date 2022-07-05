@@ -15,9 +15,9 @@ h2 {
 
 .formCard {
     background-color: #fff;
-    padding: 60px;
+    padding: 30px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 #nameInput,
