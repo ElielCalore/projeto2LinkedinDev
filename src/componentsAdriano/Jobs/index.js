@@ -53,7 +53,7 @@ export function Jobs() {
       }
     }
     fetchUser();
-  }, []);
+  }, [idCV]);
 
   async function likeButton(currentJob) {
     const jobId = currentJob._id;

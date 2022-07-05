@@ -7,9 +7,11 @@ export function AdPage() {
   const [data, setData] = useState([
     { name: "", office: "", description: "", candidacies: [] },
   ]);
+  /*
   const [form, setForm] = useState([
     { name: "", office: "", description: "", candidacies: [] },
   ]);
+  */
 
   useEffect(() => {
     async function Vancacys() {
@@ -24,11 +26,12 @@ export function AdPage() {
     }
     Vancacys();
   }, []);
-
+  /*}
   function handleChange(e) {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
+*/
 
   return (
     <div className="container-fluid mt-5" id={styles.formContainer}>

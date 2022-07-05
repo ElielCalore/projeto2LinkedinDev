@@ -45,7 +45,7 @@ export function Dashboard() {
 
     async function FetchDelete() {
       try {
-        const response = await axios.delete(
+        await axios.delete(
           `https://ironrest.herokuapp.com/linkedinadriano/${id}`
         );
         console.log("apaga");
