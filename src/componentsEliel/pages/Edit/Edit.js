@@ -51,9 +51,9 @@ export function Edit() {
     e.preventDefault();
     try {
       await axios.delete(
-        `https://ironrest.herokuapp.com/likedineliel/${id}`,
-        form
-      );
+        `https://ironrest.herokuapp.com/linkedineliel/${id}`)
+
+      
     } catch (error) {
       console.log(error);
     }
