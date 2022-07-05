@@ -127,12 +127,12 @@ export function EditFormCV () {
 
                 <div>
                     <label htmlFor="github-input" className="form-check-label">bom de github </label> 
-                    <input id="github-input" onChange={handleCheckbox} type="checkbox" name="github" className="form-check-input"  value={form.github}/>
+                    <input id="github-input" onChange={handleCheckbox} type="checkbox" name="github" className="form-check-input"  checked={form.github}/>
                 </div>
 
                 <div>
                     <label htmlFor="humor-input" className="form-check-label">senso de humor </label> 
-                    <input id="humor-input" onChange={handleCheckbox} type="checkbox" name="humor" className="form-check-input"  value={form.humor}/>
+                    <input id="humor-input" onChange={handleCheckbox} type="checkbox" name="humor" className="form-check-input"  checked={form.humor}/>
                 </div>    
             </div>
 
