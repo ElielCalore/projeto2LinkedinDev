@@ -71,10 +71,10 @@ export function Create() {
             onClick={handleSubmit}
             className={`btn btn-primary ${styles.button}`}
           >
-            Salvar Vaga!
+            Salvar
           </button>
-          <Link to="/ad-page" className="btn btn-warning">
-            VOLTAR
+          <Link to="/ad-page" className="btn btn-warning m-3">
+            Voltar
           </Link>
         </div>
       </form>

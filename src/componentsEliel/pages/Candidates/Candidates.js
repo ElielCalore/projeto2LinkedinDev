@@ -1,43 +1,31 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useParams } from "react-router-dom";
 export function Candidates() {
   const [data, setData] = useState([]);
-
+  const { id } = useParams();
   useEffect(() => {
     async function AllCandidates() {
       try {
         const response = await axios.get(
-          "https://ironrest.herokuapp.com/linkedineliel"
+          `https://ironrest.herokuapp.com/linkedineliel/${id}`
         );
-
-        setData([...response.data]);
+        setData([...response.data.candidacies]);
       } catch (error) {
         console.log(error);
       }
     }
-
     AllCandidates();
   }, []);
-
   return (
     <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5">
       {data.map((currentElement) => {
         return (
-          <div className="mb-4">
-            <div className="mb-4">
-              <h2>Informações Pessoais</h2>
-              {currentElement.candidacies.map((candidates) => {
-                return (
-                  <div>
-                    <h2> Nome completo:{candidates.name} </h2>
-                    <h3>Sobre mim:{candidates.about} </h3>
-                    <h4>Outras habilidades relevantes:{candidates.other}</h4>
-                  </div>
-                );
-              })}
-            </div>
+          <div>
+            <h2> Nome completo:{currentElement.name} </h2>
+            <h3>Sobre mim:{currentElement.about} </h3>
+            <h4>Outras habilidades relevantes:{currentElement.other}</h4>
           </div>
         );
       })}
