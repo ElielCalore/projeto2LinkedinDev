@@ -22,7 +22,8 @@ function App() {
         <Route path={"/create"} element={<Create />} />
         <Route path={"/ad-page"} element={<AdPage />} />
         <Route path={"/edit/:id"} element={<Edit />} />
-        <Route path={"/candidates"} element={<Candidates />} />
+        <Route path={"/candidates/:id"} element={<Candidates />} />
+
       </Routes>
     </div>
   );

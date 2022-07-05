@@ -10,14 +10,21 @@ h2 {
     background-color: #fff;
     padding: 100px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
-        /* border-radius: 20px; */
+    border-radius: 20px;
 }
 
 .formCard {
     background-color: #fff;
-    padding: 30px;
+    padding: 100px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
-    border-radius: 10px;
+    border-radius: 20px;
+}
+
+.formCardJobs {
+    background-color: #f8f8f8;
+    height: 160px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+    border-radius: 1px;
 }
 
 #nameInput,
@@ -55,6 +62,12 @@ h2 {
     color: #fff
 }
 
-.textArea {
-    height: 40px
+.button2 {
+    background-color: palevioletred !important;
+    border-color: palevioletred !important;
+}
+
+.button2:hover {
+    background-color: rgb(243, 11, 88) !important;
+    border-color: rgb(243, 11, 88) !important;
 }

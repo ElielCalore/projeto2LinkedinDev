@@ -76,27 +76,32 @@ export function Dashboard () {
 
                 {form.map((current) => {
                     
-                    return  <div className={`card-group col-sm-6 col-md-5 m-2 ${styles.formCard}`} key={current._id}>
-                            
-                            <div className="card">
-                                <img src="..." className="card-img-top" alt="..."/>
-                                <div className="card-body">
-                                <h5 className="card-title">{current.name}</h5>
-                                <div className="card-text d-flex justify-content-center">
-                                    <div><Link to={`/EditFormCV/${current._id}`}className={`btn btn-primary btn-sm ${styles.button}`} >EDITAR</Link></div>
-                                    <div><Link to={`/Jobs/${current._id}`} className={`btn btn-primary btn-sm ${styles.button}`} >VAGAS</Link></div>
-                                    <div><button onClick={(() => {
-                                                    handleDelete(current)
-                                              })} to="/formCV" className={`btn btn-primary btn-sm ${styles.buttonDel}`} >DELETE</button></div>
-                                </div>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            
-                            
-                            </div>
-                    })}
+                    return  <div className={`container col-sm-5 col-md-5 m-2 ${styles.formCard}`} key={current._id}>
+                                <div className="row">
 
+                                        <div className={`col-3 offset-2 ${styles.textArea}`}>
+                                                    <h5>PERFIL </h5>
+                                        </div>
+                                                
+                                        <div className={`col-7 ${styles.textArea}`}>
+                                                    <p>{current.name}</p>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <div><Link to={`/EditFormCV/${current._id}`}className={`btn btn-primary ${styles.button}`} >EDITAR</Link></div>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <div><Link to={`/Jobs/${current._id}`} className={`btn btn-primary ${styles.button}`} >VAGAS</Link></div>                                            </div>
+                                                
+                                        <div className="col-4">
+                                            <div><button onClick={(() => {
+                                                    handleDelete(current)
+                                              })} to="/formCV" className={`btn btn-primary ${styles.buttonDel}`} >DELETE</button></div>
+                                            </div>
+                                        </div>
+                                </div>
+                    })}
             </div>
 
         </div>

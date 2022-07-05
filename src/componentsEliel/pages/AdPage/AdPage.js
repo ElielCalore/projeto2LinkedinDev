@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import styles from "../../../componentsAdriano/Dashboard/styles.module.css";
+import styles from "./styles.module.css";
 
 export function AdPage() {
   const [data, setData] = useState([
@@ -39,7 +39,7 @@ export function AdPage() {
       <div className="row">
         <div className="col-3">
           <Link to="/create" className={`btn btn-primary ${styles.button}`}>
-            Anúncie Sua Vaga Aqui!
+            Anuncie
           </Link>
         </div>
         <div className="col-3"></div>
@@ -47,25 +47,32 @@ export function AdPage() {
 
         {data.map((current) => {
           return (
-            <div
-              className={`container col-sm-5 col-md-3 m-2 ${styles.formCard}`}
-              key={current._id}
-            >
-              <div className="row">
-                <h1 onChange={handleChange}>{current.name}</h1>
-                <h2 onChange={handleChange}>{current.office}</h2>
-                <p onChange={handleChange}>{current.description}</p>
-                <Link to={`/edit/${current._id}`} className="btn btn-primary">
-                  Editar Anúncio de Vaga!
-                </Link>
-                <Link to={"/candidates"} className="btn btn-dark">
-                  Veja Os Candidatos A Vaga!
-                </Link>
-                <Link to="/dashboard" className="btn btn-warning">
-                  VOLTAR
-                </Link>
-              </div>
+<>
+            <div className={`container mb-5 ${styles.formCardJobs}`} key={current.name}>
+            <div className="row mb-3 p-4 align-items-center">
+                <div className="col-3"><strong>{current.name}</strong></div>
+                <div className="col-7">{current.office}</div>
+                <div className="col-1"><Link to={`/edit/${current._id}`} className={`btn btn-primary ${styles.button}`}>
+                  Edit 
+                </Link></div>
+                <div className="col-10 ">{current.description}</div>
+                <div className="col-1"><Link to={`/candidates/${current._id}`} className={`btn btn-primary ${styles.button}`}>
+                  Details
+                </Link></div>
+
+
+
             </div>
+
+        </div>
+
+
+
+
+
+
+            </>
+
           );
         })}
       </div>

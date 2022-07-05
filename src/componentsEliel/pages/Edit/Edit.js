@@ -106,15 +106,17 @@ export function Edit() {
             onClick={handleSubmit}
             className={`btn btn-primary ${styles.button}`}
           >
-            Salvar Vaga!
+            Salvar
           </button>
 
-          <button onClick={handleDelete} className="btn btn-danger">
-            Deletar Vaga!
-          </button>
-          <Link to="/ad-page" className="btn btn-warning">
-            VOLTAR
+          <Link to="/ad-page" className={`btn btn-primary m-3 ${styles.button}`}>
+            Voltar
           </Link>
+
+          <button onClick={handleDelete} className="btn btn-danger">
+            Deletar
+          </button>
+
         </div>
       </form>
     </div>
