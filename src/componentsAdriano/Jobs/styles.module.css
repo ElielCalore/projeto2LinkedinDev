@@ -15,9 +15,16 @@ h2 {
 
 .formCard {
     background-color: #fff;
-    padding: 60px;
+    padding: 100px;
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
     border-radius: 20px;
+}
+
+.formCardJobs {
+    background-color: #f8f8f8;
+    height: 160px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+    border-radius: 1px;
 }
 
 #nameInput,
@@ -53,8 +60,4 @@ h2 {
     box-shadow: .5px 10px 15px rgba(0, 0, 0, .2) !important;
     margin:10px;
     color: #fff
-}
-
-.textArea {
-    height: 40px
 }

@@ -1,7 +1,7 @@
 import styles from "./styles.module.css"
 import axios from "axios"
 import {useState} from "react"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 
 export function FormCV () {
 
@@ -79,7 +79,7 @@ export function FormCV () {
 
     return(
 
-    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5" id={styles.formContainer}>    
+    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5" id={styles.formContainer}>    
         <form>
 
             {/* <div className="mb-4">
@@ -104,42 +104,42 @@ export function FormCV () {
             <div className="form-check mb-4">
                 <div>
                     <label htmlFor="debug-input" className="form-check-label">bom em debugar</label> 
-                    <input type="checkbox" onChange={handleCheckbox} name="debug" className="form-check-input" id="debug-input" value={form.debug}/>
+                    <input type="checkbox" onChange={handleCheckbox} name="debug" className="form-check-input" id="debug-input" checked={form.debug}/>
                 </div>
 
                 <div>
                     <label htmlFor="css-input" className="form-check-label">css na unha </label> 
-                    <input id="css-input" onChange={handleCheckbox} type="checkbox" name="css" className="form-check-input"  value={form.css}/>
+                    <input id="css-input" onChange={handleCheckbox} type="checkbox" name="css" className="form-check-input"  checked={form.css}/>
                 </div>
 
                 <div>
                     <label htmlFor="bootstrap-input" className="form-check-label">decorou classes de bootstrap </label> 
-                    <input id="bootstrap-input" onChange={handleCheckbox} type="checkbox" name="bootstrap" className="form-check-input"  value={form.bootstrap}/>
+                    <input id="bootstrap-input" onChange={handleCheckbox} type="checkbox" name="bootstrap" className="form-check-input"  checked={form.bootstrap}/>
                 </div>
 
                 <div>
                     <label htmlFor="form-input" className="form-check-label">bom de formulario </label> 
-                    <input id="form-input" onChange={handleCheckbox} type="checkbox" name="form" className="form-check-input"  value={form.form}/>
+                    <input id="form-input" onChange={handleCheckbox} type="checkbox" name="form" className="form-check-input"  checked={form.form}/>
                 </div>
 
                 <div>
                     <label htmlFor="delete-input" className="form-check-label">sabe fazer o delete funcionar </label> 
-                    <input id="delete-input" onChange={handleCheckbox} type="checkbox" name="delete" className="form-check-input"  value={form.delete}/>
+                    <input id="delete-input" onChange={handleCheckbox} type="checkbox" name="delete" className="form-check-input"  checked={form.delete}/>
                 </div>
 
                 <div>
                     <label htmlFor="mongo-input" className="form-check-label">manja de MongoDB </label> 
-                    <input id="mongo-input" onChange={handleCheckbox} type="checkbox" name="mongo" className="form-check-input"  value={form.mongo}/>
+                    <input id="mongo-input" onChange={handleCheckbox} type="checkbox" name="mongo" className="form-check-input"  checked={form.mongo}/>
                 </div>
 
                 <div>
                     <label htmlFor="github-input" className="form-check-label">bom de github </label> 
-                    <input id="github-input" onChange={handleCheckbox} type="checkbox" name="github" className="form-check-input"  value={form.github}/>
+                    <input id="github-input" onChange={handleCheckbox} type="checkbox" name="github" className="form-check-input"  checked={form.github}/>
                 </div>
 
                 <div>
                     <label htmlFor="humor-input" className="form-check-label">senso de humor </label> 
-                    <input id="humor-input" onChange={handleCheckbox} type="checkbox" name="humor" className="form-check-input"  value={form.humor}/>
+                    <input id="humor-input" onChange={handleCheckbox} type="checkbox" name="humor" className="form-check-input"  checked={form.humor}/>
                 </div>    
             </div>
 
@@ -151,7 +151,7 @@ export function FormCV () {
             </div>
 
             <button onClick={handleSubmit} className={`btn btn-primary ${styles.button}`}>ENVIAR</button>
-
+            <Link to="/dashboard" className={`m-3 btn btn-primary ${styles.button}`}>VOLTAR</Link>
         </form>
     </div>
     )
