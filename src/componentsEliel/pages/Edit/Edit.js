@@ -17,7 +17,7 @@ export function Edit() {
     async function Vacancy() {
       try {
         const response = await axios.get(
-          `https://ironrest.herokuapp.com/likedineliel/${id}`
+          `https://ironrest.herokuapp.com/linkedineliel/${id}`
         );
         setForm({ ...response.data });
       } catch (err) {
@@ -38,7 +38,7 @@ export function Edit() {
       const clone = { ...form };
       delete clone._id;
       await axios.put(
-        `https://ironrest.herokuapp.com/likedineliel/${id}`,
+        `https://ironrest.herokuapp.com/linkedineliel/${id}`,
         clone
       );
     } catch (error) {
@@ -112,6 +112,9 @@ export function Edit() {
           <button onClick={handleDelete} className="btn btn-danger">
             Deletar Vaga!
           </button>
+          <Link to="/ad-page" className="btn btn-warning">
+            VOLTAR
+          </Link>
         </div>
       </form>
     </div>

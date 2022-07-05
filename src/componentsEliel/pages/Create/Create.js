@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export function Create() {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export function Create() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      await axios.post("https://ironrest.herokuapp.com/likedineliel", form);
+      await axios.post("https://ironrest.herokuapp.com/linkedineliel", form);
     } catch (err) {
       console.log(err);
     }
@@ -73,6 +73,9 @@ export function Create() {
           >
             Salvar Vaga!
           </button>
+          <Link to="/ad-page" className="btn btn-warning">
+            VOLTAR
+          </Link>
         </div>
       </form>
     </div>

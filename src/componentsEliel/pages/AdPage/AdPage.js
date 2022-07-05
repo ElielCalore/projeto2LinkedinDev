@@ -15,7 +15,7 @@ export function AdPage() {
     async function Vancacys() {
       try {
         const response = await axios.get(
-          "https://ironrest.herokuapp.com/likedineliel"
+          "https://ironrest.herokuapp.com/linkedineliel"
         );
         setData(response.data);
       } catch (error) {
@@ -24,8 +24,6 @@ export function AdPage() {
     }
     Vancacys();
   }, []);
-
-  console.log(data);
 
   function handleChange(e) {
     e.preventDefault();
@@ -41,7 +39,7 @@ export function AdPage() {
       <div className="row">
         <div className="col-3">
           <Link to="/create" className={`btn btn-primary ${styles.button}`}>
-            CRIE PERFIL
+            Anúncie Sua Vaga Aqui!
           </Link>
         </div>
         <div className="col-3"></div>
@@ -57,10 +55,14 @@ export function AdPage() {
                 <h1 onChange={handleChange}>{current.name}</h1>
                 <h2 onChange={handleChange}>{current.office}</h2>
                 <p onChange={handleChange}>{current.description}</p>
-                <Link to={`/edit/${current._id}`}>
-                  <button className="btn btn-primary">
-                    Editar Anúncio de Vaga!
-                  </button>
+                <Link to={`/edit/${current._id}`} className="btn btn-primary">
+                  Editar Anúncio de Vaga!
+                </Link>
+                <Link to={"/candidates"} className="btn btn-dark">
+                  Veja Os Candidatos A Vaga!
+                </Link>
+                <Link to="/dashboard" className="btn btn-warning">
+                  VOLTAR
                 </Link>
               </div>
             </div>
