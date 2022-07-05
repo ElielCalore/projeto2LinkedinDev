@@ -61,3 +61,13 @@ h2 {
     margin:10px;
     color: #fff
 }
+
+.button2 {
+    background-color: palevioletred !important;
+    border-color: palevioletred !important;
+}
+
+.button2:hover {
+    background-color: rgb(243, 11, 88) !important;
+    border-color: rgb(243, 11, 88) !important;
+}

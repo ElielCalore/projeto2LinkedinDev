@@ -33,7 +33,7 @@ export function Candidates() {
           </div>
         );
       })}
-      <Link to="/ad-page" className="btn btn-warning mt-5">
+      <Link to="/ad-page" className={`btn btn-warning mt-5 ${styles.button2}`}>
         VOLTAR
       </Link>
     </div>
