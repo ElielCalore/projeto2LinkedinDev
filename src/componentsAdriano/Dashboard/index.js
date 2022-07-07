@@ -1,15 +1,15 @@
 import {Link} from "react-router-dom"
 import {useState, useEffect} from "react"
 import axios from "axios"
-
+import { useContext } from "react";
+import { Background } from "../../context/contextdark";
 
 import styles from "./styles.module.css"
 
 
-
 export function Dashboard () {
 
-
+    const {color} = useContext(Background)
 
     const [form, setForm] = useState([{
         name: "",
@@ -65,10 +65,10 @@ export function Dashboard () {
 
 
     return (
-        <div className="container-fluid mt-5 mb-5" id={styles.formContainer}>
+        <div className={color === "light" ? `container-fluid mt-4 dark` : `container-fluid mt-4 light`}>
             <div><h2>DASHBOARD</h2></div>
 
-            <div className="row">
+            <div className="row justify-content-center">
                 
                 <div className="col-3"><Link to="/formCV" className={`btn btn-primary ${styles.button}`} >CRIE PERFIL</Link></div>
                 <div className="col-3"></div>
@@ -79,7 +79,7 @@ export function Dashboard () {
                     return  <div className={`card-group col-sm-6 col-md-5 m-2 ${styles.formCard}`} key={current._id}>
                             
                             <div className="card">
-                                <img src="..." className="card-img-top" alt="..."/>
+                                {/* <img src="..." className="card-img-top" alt="..."/> */}
                                 <div className="card-body">
                                 <h5 className="card-title">{current.name}</h5>
                                 <div className="card-text d-flex justify-content-center">

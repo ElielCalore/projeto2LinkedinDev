@@ -72,7 +72,7 @@ export function EditFormCV () {
     return (
 
 
-        <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5" id={styles.formContainer}>    
+        <div className={`col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5 ${styles.formContainer}`}>    
         <form>
 
             {/* <div className="mb-4">

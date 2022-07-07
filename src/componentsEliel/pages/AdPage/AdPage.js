@@ -31,24 +31,24 @@ export function AdPage() {
   }
 
   return (
-    <div className="container-fluid mt-5" id={styles.formContainer}>
-      <div>
+    <div className={`container-fluid mt-5 ${styles.formContainer}`}>
+      <div className="m-2">
         <h2>DASHBOARD</h2>
       </div>
 
       <div className="row">
-        <div className="col-3">
+        <div className="col-3 mb-5">
           <Link to="/create" className={`btn btn-primary ${styles.button}`}>
             Anuncie
           </Link>
         </div>
-        <div className="col-3"></div>
-        <div className="col-3"></div>
+        <div className="col-3 mb-5"></div>
+        <div className="col-3 mb-5"></div>
 
         {data.map((current) => {
           return (
 <>
-            <div className={`container mb-5 ${styles.formCardJobs}`} key={current.name}>
+            <div className={`container col-11 mb-5 ${styles.formCardJobs}`} key={current.name}>
             <div className="row mb-3 p-4 align-items-center">
                 <div className="col-3"><strong>{current.name}</strong></div>
                 <div className="col-7">{current.office}</div>

@@ -27,9 +27,7 @@ export function Create() {
 
   return (
     <div
-      className="col-md-8 col-sm-12 col-lg-8 container mt-5"
-      id={styles.formContainer}
-    >
+      className={`col-md-8 col-sm-12 col-lg-8 container mt-5 ${styles.formContainer}`}>
       <form>
         <div className="mb-4">
           <label htmlFor="name-input" className="form-label">

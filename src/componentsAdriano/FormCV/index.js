@@ -2,8 +2,12 @@ import styles from "./styles.module.css"
 import axios from "axios"
 import {useState} from "react"
 import {useNavigate, Link} from "react-router-dom"
+import { useContext } from "react";
+import { Background } from "../../context/contextdark";
 
 export function FormCV () {
+
+    const {color} = useContext(Background)
 
     const navigate = useNavigate()
 
@@ -79,7 +83,7 @@ export function FormCV () {
 
     return(
 
-    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5" id={styles.formContainer}>    
+    <div className={color === "light" ? `col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5 dark` :  `col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5 light`}>    
         <form>
 
             {/* <div className="mb-4">

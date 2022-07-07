@@ -22,7 +22,7 @@ export function Candidates() {
     AllCandidates();
   }, []);
   return (
-    <div className="col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5" id={styles.formContainer}>
+    <div className={`col-md-8 col-sm-12 col-lg-8 container mt-5 mb-5 ${styles.formContainer}`}>
       <div className="mb-5"><h3>Lista de Candidatos</h3></div>
       {data.map((currentElement) => {
         return (

@@ -6,12 +6,18 @@ h2 {
     font-weight: 700 !important;
 }
 
-#formContainer {
+.formContainer {
     background-color: #fff;
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0.5px 10px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 70px;
+    padding: 100px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+        border-radius: 20px;
+}
+
+.formContainer.dark {
+    background-color: #555555;
+    padding: 100px;
+    box-shadow: .5px 10px 15px rgba(0, 0, 0, .2);
+        border-radius: 20px;
 }
 
 #nameInput,

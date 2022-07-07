@@ -81,7 +81,7 @@ export function Jobs () {
    
 
 
-            <div className="container-fluid mt-5" id={styles.formContainer}>
+            <div className={`container-fluid mt-5 ${styles.formContainer}`}>
                 <div className="mb-5"><h2>JOB OFFERS</h2></div>
 
 
