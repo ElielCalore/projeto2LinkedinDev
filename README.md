@@ -5,6 +5,6 @@ Este projeto é parte do Bootcamp de Desenvolvimento Web FullStack da Ironhack. 
 
 ![cover](https://user-images.githubusercontent.com/32084589/177786681-ae4e5c56-96fb-48ed-915c-5939e2460f42.jpg)
 
-[Live version]([https://linkedindev.netlify.app/](https://linkedindev.netlify.app/))
+Deploy: https://linkedindev.netlify.app/
 
 
